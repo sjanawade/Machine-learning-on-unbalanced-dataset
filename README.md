@@ -1,7 +1,7 @@
 # Machine learning on unbalanced dataset
 
 ## Dataset:
-Use the **data_unbalanced.csv** file to get the dataset used to train and test the machine learning models in this project.
+Use the _**data_unbalanced.csv**_ file to get the dataset used to train and test the machine learning models in this project.
 
 ## Problem Statement:
 In this analysis, I intend to explore some of the data augmentation techniques applied to unbalanced classification problem. The problem consists of three classes (60.2% Type0, 26.2% Type1 and 13.5% Type2). The goal of the analysis is to learn how data augmentation techniques work on this problem, explore whether it always helps to classify instances accurately and how to avoid some of the conceptual pitfalls while applying machine learning on unbalanced datasets.
