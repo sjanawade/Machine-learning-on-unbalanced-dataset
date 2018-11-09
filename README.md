@@ -5,7 +5,7 @@ In this analysis, I intend to explore some of the data augmentation techniques a
 
 
 ## Methodology:
-Starting with exploratory data analysis by summary statistics and visualization, some of the data preprocessing techniques such as handling missing data and standardizing dataset was also applied. The various cases that were tested are as follows:
+Starting with exploratory data analysis by summary statistics and visualization, some of the data preprocessing techniques such as handling missing data and standardizing dataset was also applied. The standard EDA would not have made a lot of sense since the source dataset had original variable names anonymized because of confidentiality. The various cases that were tested are as follows:
 1) Unbalanced dataset (Base case)
 2) Resampling minority classes
 3) Synthetic Minority Oversampling Technique (SMOTE)
@@ -17,6 +17,7 @@ The following machine learning algorithm were tested:
 1) Random Forest
 2) Support Vector Machines
 3) Logistic Regression
+4) XGBoost
 
 
 ## Results and Conclusion:
@@ -24,5 +25,7 @@ The following machine learning algorithm were tested:
 - The main purpose of this analysis was not to portray the best data augmentation technique or the best performing machine learning algorithm on unbalanced dataset. Rather, I wanted to follow fundamentally strong and conceptually profound techniques which would give me a deeper insight into how the data augmentation techniques works in combination with some of the best machine learning algorithms.
 - That goal is certainly achieved as it was seen that any data augmentation technique (resampling minority, SMOTE, downsampling + SMOTE) can still overfit our training data.
 - The problem of overfitting was then resolved by creating a custom function which would cross validate first before applying the various data augmentation techniques.
+-  Instead of creating a custom function, which can get convoluted at times, I made use of imblearn's Pipeline to create a pipeline of SMOTE --- Feature Selection --- Classifier with Hyperparameter Tuning.
+-  As it turns out, the pipeline for Random Forest Classifier gives the best F1 score on the test dataset.
 - Although this does not single out a machine learning algorithm but it significantly reduces the overfitting.
 - Conclusively, through this analysis I discovered how data augmentation techniques work and how to best use them with machine learning algorithm and overcome the common pitfalls that one might fall into, if they are not careful while applying these techniques.
